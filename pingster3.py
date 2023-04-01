@@ -20,7 +20,7 @@ def pingsweep(addr):
         parameter = '-n' if platform.system().lower()=='windows' else '-c' 
         #hide the detail of the ping output
         parameter2 = ' nul' if platform.system().lower()=='windows' else ' /dev/null'
-        # Building the command to ping sweep. Ex: "ping -c 1 -w 1 addr host >nul"
+        # Building the command to ping sweep. Ex: "ping -c 1 -w 1 addr host"
         command = ['ping', parameter, '1', '-w 1', addr, host]
         response = subprocess.call(command, stdout=open(parameter2, 'w'), stderr=subprocess.STDOUT) #take the command and display output to console
     
